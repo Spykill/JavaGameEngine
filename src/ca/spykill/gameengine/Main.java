@@ -1,7 +1,10 @@
 package ca.spykill.gameengine;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -11,6 +14,8 @@ import ca.spykill.gameengine.scenes.TestScene;
 public class Main extends JPanel
 {
 	JFrame window;
+	Input input;
+	
 	int windowWidth;
 	int windowHeight;
 	
@@ -40,27 +45,43 @@ public class Main extends JPanel
 		window.setSize(windowWidth,  windowHeight);
 		window.setContentPane(this);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		time = System.nanoTime();
+		
+		setPreferredSize(new Dimension(windowWidth, windowHeight));
+		//window.pack();
+		window.setResizable(false);
+		
+		input = new Input();
+		System.out.print(window.getWidth());
+		input.setupInput(window, 256, 3, this.getX(), this.getBounds().y);
+		
+		gameTime = System.nanoTime() / 1000000000.0f;
 		
 		gameObjects = new ArrayList<GameObject>();
 		
 		currentScene = new TestScene();
 		currentScene.InitialiseScene(this);
+		
+		gameLoop();
 	}
 	
 	public void gameLoop()
 	{
-		float newTime = System.nanoTime();
-		float deltaTime = (newTime - gameTime) / 0.000001f;
-		
-		for(int i = 0; i < deltaTime / updateTime; i++)
+		while(true)
 		{
-			deltaTime -= updateTime;
-			update();
+			float newTime = System.nanoTime() / 1000000000.0f;
+			float deltaTime = (newTime - gameTime);
+			
+			for(int i = 0; i < deltaTime / updateTime; i++)
+			{
+				deltaTime -= updateTime;
+				gameTime += updateTime;
+				update();
+			}
+			
+			currentInterpolation = deltaTime / updateTime;
+			repaint();
+			input.flush();
 		}
-		
-		currentInterpolation = deltaTime / updateTime;
-		repaint();
 	}
 	
 	public void update()
@@ -89,7 +110,11 @@ public class Main extends JPanel
 		{
 			gameObjects.get(i).render(g, currentInterpolation);
 		}
-		
+
+		g.setColor(Color.WHITE);
+		g.setFont(new Font("Arial", 0, 25));
+		g.drawString(input.getMouseX() + " | ", 15, 30);
+		//System.out.println("Here");
 	}
 
 	public static void main(String[] args)
