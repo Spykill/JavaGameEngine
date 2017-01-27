@@ -1,8 +1,7 @@
 package ca.spykill.gameengine;
 
-import ca.spykill.gameengine.scenes.TestScene;
-
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 /**
@@ -13,110 +12,267 @@ public class Game
     private Main main;
     private Input input;
 
-    private float updateTime;
+    private boolean haltGameLoop = false;
 
-    private float time;
-    private float gameTime;
+    private float windowWidth;
+    private float windowHeight;
+
+    private long updateTime;
+
+    private long time;
+    private long gameTime;
 
     private float currentInterpolation;
 
-    public ArrayList<GameObject> gameObjects;
-    public ArrayList<PhysicsBody> physicsBodies;
+    private ArrayList<GameObject> gameObjects;
+    private ArrayList<PhysicsBody> physicsBodies;
 
-    public ArrayList<PhysicsBody> kinematic;
-    public ArrayList<PhysicsBody> dynamic;
+    private ArrayList<PhysicsBody> kinematic;
+    private ArrayList<PhysicsBody> dynamic;
+    private ArrayList<PhysicsBody> trigger;
 
-    public ArrayList<PhysicsBody> trigger;
+    private ArrayList<String> debugMessages;
 
-    public Scene currentScene;
+    private Scene currentScene;
 
+    private Camera camera;
+
+    /**
+     * Constructs this game instance.
+     * @param FPS The desired number of times to run the game update per second
+     * @param input The reference to the bound input (to get input from the window)
+     * @param main The reference to the main (so that we have something to draw to)
+     */
     public Game(float FPS, Input input, Main main)
     {
-        this.updateTime = 1.0f / FPS;
+        this.updateTime = (long)((1.0f / FPS) * 1000000000.0f);
         this.input = input;
         this.main = main;
 
-        gameTime = System.nanoTime() / 1000000000.0f;
+        windowWidth = main.getWindowWidth();
+        windowHeight = main.getWindowHeight();
 
-        gameObjects = new ArrayList<GameObject>();
-        physicsBodies = new ArrayList<PhysicsBody>();
-        kinematic = new ArrayList<PhysicsBody>();
-        dynamic = new ArrayList<PhysicsBody>();
-        trigger = new ArrayList<PhysicsBody>();
+        gameTime = System.nanoTime();
+
+        gameObjects = new ArrayList<>();
+        physicsBodies = new ArrayList<>();
+        kinematic = new ArrayList<>();
+        dynamic = new ArrayList<>();
+        trigger = new ArrayList<>();
+
+        debugMessages = new ArrayList<>();
+        debugMessages.ensureCapacity(100);
     }
 
-    public void StartScene(Scene scene)
+    /**
+     * Starts the specified scene
+     * @param scene The scene to initialise and use
+     */
+    public void startScene(Scene scene)
     {
         scene.InitialiseScene(this);
         currentScene = scene;
     }
 
-    public void AddToScene(GameObject object)
+    /**
+     * Adds <object> to the scene
+     * @param object The object to add
+     */
+    public void addToScene(GameObject object)
     {
         gameObjects.add(object);
         if(object instanceof PhysicsBody)
         {
             PhysicsBody pb = (PhysicsBody)object;
             physicsBodies.add(pb);
-            if(pb.isKinematic())
-            {
-                kinematic.add(pb);
-            }
-            else
-            {
-                dynamic.add(pb);
-            }
-
-            if(pb.isTrigger())
-            {
-                trigger.add(pb);
-            }
+            addPhysicsBodyToLists(pb);
         }
     }
 
-    public void gameLoop()
+    /**
+     * Clears <body> from dynamic, kinematic, or trigger lists so that we can re-add it to the correct one
+     * @param body The body to remove from lists
+     * @return Was the body found and removed?
+     */
+    boolean clearPhysicsBodyFromLists(PhysicsBody body)
     {
-        while(true)
+        ArrayList<PhysicsBody> listToRemove;
+        switch(body.getPhysicsType())
         {
-            float newTime = System.nanoTime() / 1000000000.0f;
-            float deltaTime = (newTime - gameTime);
+            case Dynamic:
+                listToRemove = dynamic;
+                break;
+            case Kinematic:
+                listToRemove = kinematic;
+                break;
+            case Trigger:
+                listToRemove = trigger;
+                break;
+            default:
+                listToRemove = null;
+                break;
+        }
 
-            for(int i = 0; i < deltaTime / updateTime; i++)
+        int ind = listToRemove.indexOf(body);
+        if(ind != -1)
+        {
+            listToRemove.remove(ind);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Adds <body> to the correct list (dynamic, kinematic, trigger)
+     * @param body The body to add
+     */
+    void addPhysicsBodyToLists(PhysicsBody body)
+    {
+        switch (body.getPhysicsType())
+        {
+            case Dynamic:
+                dynamic.add(body);
+                break;
+            case Kinematic:
+                kinematic.add(body);
+                break;
+            case Trigger:
+                trigger.add(body);
+                break;
+        }
+    }
+
+    /**
+     * Starts and maintains the game loop
+     */
+    void gameLoop()
+    {
+        haltGameLoop = false;
+        while(!haltGameLoop)
+        {
+            long newTime = System.nanoTime();
+            long deltaTime = (newTime - gameTime);
+
+            //for(int i = 0; i < deltaTime / updateTime; i++)
+            while(deltaTime > updateTime)
             {
                 deltaTime -= updateTime;
                 gameTime += updateTime;
                 update();
             }
 
-            currentInterpolation = deltaTime / updateTime;
-            main.repaint();
+            currentInterpolation = deltaTime * 1.0f / updateTime;
+            //main.repaint();
+            //main.paintImmediately(0,0, (int)windowWidth, (int)windowHeight);
+            render(main.getGraphics());
+
             input.flush();
         }
     }
 
-    public void update()
+    /**
+     * Performs the update iteration
+     */
+    private void update()
     {
+        camera.update(updateTime / 1000000000.0f);
+
         physicsUpdate();
 
         for(int i = 0; i < gameObjects.size(); i++)
         {
-            gameObjects.get(i).update(updateTime);
+            gameObjects.get(i).update(updateTime / 1000000000.0f);
         }
+        //addDebugMessage("" + debugMessages.size());
     }
 
+    /**
+     * Performs the physics step
+     */
     public void physicsUpdate()
     {
-    }
-
-    public void render(Graphics g)
-    {
-        for(int i = 0; i < gameObjects.size(); i++)
+        for(int i = 0; i < dynamic.size(); i++)
         {
-            gameObjects.get(i).render(g, currentInterpolation);
+            dynamic.get(i).doVelocityStep(updateTime / 1000000000.0f);
         }
 
-        g.setColor(Color.WHITE);
-        g.setFont(new Font("Arial", 0, 25));
-        g.drawString(input.getMouseX() + " | ", 15, 30);
+        for(int i = 0; i < dynamic.size(); i++)
+        {
+            for(int j = 0; j < kinematic.size(); j++)
+            {
+                dynamic.get(i).tryCollision(kinematic.get(j));
+            }
+
+            for(int j = i + 1; j < dynamic.size(); j++)
+            {
+                dynamic.get(i).tryCollision(dynamic.get(j));
+            }
+        }
+    }
+
+    /**
+     * Renders the current state of the game to <g>
+     * @param g The Graphics object to draw to
+     */
+    public void render(Graphics g)
+    {
+        if(camera == null)
+        {
+            return;
+        }
+
+        BufferedImage img = new BufferedImage((int)windowWidth, (int)windowHeight, BufferedImage.TYPE_INT_ARGB);
+        Graphics alt_g = img.getGraphics();
+
+        alt_g.setColor(Color.BLACK);
+        alt_g.fillRect(0, 0, (int)windowWidth, (int)windowHeight);
+        camera.render(currentInterpolation);
+
+        for(int i = 0; i < gameObjects.size(); i++)
+        {
+            gameObjects.get(i).render(alt_g, camera, currentInterpolation);
+        }
+
+        alt_g.setColor(Color.WHITE);
+        alt_g.setFont(new Font("Arial", 0, 15));
+        alt_g.drawString(camera.getOffset(currentInterpolation).X() + " | ", 15, 30);
+        alt_g.dispose();
+
+        for(int i = 0; i < debugMessages.size(); i++)
+        {
+            alt_g.drawString(debugMessages.get(i), 15, 20 *(i+1));
+        }
+        debugMessages.clear();
+        g.drawImage(img, 0, 0, null);
+    }
+
+    public void addDebugMessage(String message)
+    {
+        debugMessages.add(message);
+    }
+
+    public Camera getCamera()
+    {
+        return camera;
+    }
+
+    public void setCamera(Camera camera)
+    {
+        this.camera = camera;
+    }
+
+    public Input getInput()
+    {
+        return input;
+    }
+
+    public float getWindowWidth()
+    {
+        return windowWidth;
+    }
+
+    public float getWindowHeight()
+    {
+        return windowHeight;
     }
 }

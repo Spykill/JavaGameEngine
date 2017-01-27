@@ -4,20 +4,20 @@ import java.awt.datatransfer.FlavorTable;
 
 public class Rectangle
 {
-	private float x;
-	private float y;
-	private float w;
-	private float h;
+	private double x;
+	private double y;
+	private double w;
+	private double h;
 	
-	private float b;
-	private float r;
+	private double b;
+	private double r;
 	
 	public Rectangle()
 	{
 		this(0, 0, 0, 0);
 	}
 	
-	public Rectangle(float x, float y, float w, float h)
+	public Rectangle(double x, double y, double w, double h)
 	{
 		this.x = x;
 		this.y = y;
@@ -28,56 +28,56 @@ public class Rectangle
 		this.r = this.x + this.w;
 	}
 
-	public float getX()
+	public double getX()
 	{
 		return x;
 	}
 
-	public void setX(float x)
+	public void setX(double x)
 	{
 		this.x = x;
 		this.w = this.x + this.w;
 	}
 
-	public float getY()
+	public double getY()
 	{
 		return y;
 	}
 
-	public void setY(float y)
+	public void setY(double y)
 	{
 		this.y = y;
 		this.b = this.y + this.h;
 	}
 
-	public float getW()
+	public double getW()
 	{
 		return w;
 	}
 
-	public void setW(float w)
+	public void setW(double w)
 	{
 		this.w = w;
 		this.r = this.x + w;
 	}
 
-	public float getH()
+	public double getH()
 	{
 		return h;
 	}
 
-	public void setH(float h)
+	public void setH(double h)
 	{
 		this.h = h;
 		this.b = this.y + h;
 	}
 
-	public float getBottom()
+	public double getBottom()
 	{
 		return b;
 	}
 
-	public void setBottom(float b)
+	public void setBottom(double b)
 	{
 		this.h += b - this.b;
 		if(this.h < 0)
@@ -88,12 +88,12 @@ public class Rectangle
 		this.b = b;
 	}
 
-	public float getRight()
+	public double getRight()
 	{
 		return r;
 	}
 
-	public void setRight(float r)
+	public void setRight(double r)
 	{
 		this.w += r - this.r;
 		if(this.w < 0)
@@ -104,12 +104,12 @@ public class Rectangle
 		this.r = r;
 	}
 	
-	public float getArea()
+	public double getArea()
 	{
 		return this.w * this.h;
 	}
 	
-	public float getPerimeter()
+	public double getPerimeter()
 	{
 		return 2 * this.w + 2 * this.h;
 	}
@@ -117,5 +117,43 @@ public class Rectangle
 	public Vector3 getCentre()
 	{
 		return new Vector3(this.x + this.w * .5f, this.y + this.h * .5f);
+	}
+
+	public boolean containsPoint(double px, double py)
+	{
+		return (px < x || px > r || py < y || py > b);
+	}
+
+	public boolean containsPoint(Vector3 point)
+	{
+		return containsPoint(point.X(), point.Y());
+	}
+
+	public boolean intersects(Rectangle rect)
+	{
+		return rect.x > r || rect.y > b || rect.r < rect.x || rect.b < rect.y;
+	}
+
+	/**
+	 * Translates the rectangle by <offset>
+	 * @param offset Amount to translate by
+	 * @return The reference to the this for ease of use
+	 */
+	public Rectangle translate(Vector3 offset)
+	{
+		this.x += offset.X();
+		this.y += offset.Y();
+		this.r = this.x + this.w;
+		this.b = this.y + this.h;
+		return this;
+	}
+
+	/**
+	 * Creates a new rectangle with the same origin and dimensions as this rectangle
+	 * @return The new rectangle
+	 */
+	public Rectangle clone()
+	{
+		return new Rectangle(x, y, w, h);
 	}
 }

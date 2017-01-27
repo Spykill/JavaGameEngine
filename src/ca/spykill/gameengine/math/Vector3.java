@@ -8,21 +8,21 @@ public class Vector3
 	/**
 	 * The X component of this vector
 	 */
-	private float x;
+	private double x;
 	/**
 	 * The Y component of this vector
 	 */
-	private float y;
+	private double y;
 	/**
 	 * The Z component of this vector
 	 */
-	private float z;
+	private double z;
 
 	/**
 	 * The magnitude of this vector
 	 */
-	private float magnitude;
-	private float sqr_magnitude;
+	private double magnitude;
+	private double sqr_magnitude;
 
 	/**
 	 * Initializes this vector to (0,0,0)
@@ -35,12 +35,12 @@ public class Vector3
 	/**
 	 * Initializes this vector to (x,y,0)
 	 */
-	public Vector3(float x, float y)
+	public Vector3(double x, double y)
 	{
 		this(x, y, 0);
 	}
 	
-	public Vector3(float x, float y, float z)
+	public Vector3(double x, double y, double z)
 	{
 		this.x = x;
 		this.y = y;
@@ -52,7 +52,7 @@ public class Vector3
 	 * Getter for X
 	 * @return X
 	 */
-	public float X()
+	public double X()
 	{
 		return x;
 	}
@@ -61,7 +61,7 @@ public class Vector3
 	 * Setter for X
 	 * @param x New value of X
 	 */
-	public void X(float x)
+	public void X(double x)
 	{
 		this.x = x;
 		Recalculate();
@@ -71,7 +71,7 @@ public class Vector3
 	 * Getter for Y
 	 * @return Y
 	 */
-	public float Y()
+	public double Y()
 	{
 		return y;
 	}
@@ -80,7 +80,7 @@ public class Vector3
 	 * Setter for Y
 	 * @param y New value of y
 	 */
-	public void Y(float y)
+	public void Y(double y)
 	{
 		this.y = y;
 		Recalculate();
@@ -90,7 +90,7 @@ public class Vector3
 	 * Getter for Z
 	 * @return Z
 	 */
-	public float Z()
+	public double Z()
 	{
 		return z;
 	}
@@ -99,7 +99,7 @@ public class Vector3
 	 * Sets the z value of this vector
 	 * @param z The value to set z to
 	 */
-	public void Z(float z)
+	public void Z(double z)
 	{
 		this.z = z;
 		Recalculate();
@@ -109,7 +109,7 @@ public class Vector3
 	 * Gets the calculated magnitude
 	 * @return The magnitude of this vector
 	 */
-	public float Magnitude()
+	public double Magnitude()
 	{
 		return magnitude;
 	}
@@ -118,7 +118,7 @@ public class Vector3
 	 * Gets the calculated magnitude squared
 	 * @return The squared magnitude of this vector
 	 */
-	public float MagnitudeSquared()
+	public double MagnitudeSquared()
 	{
 		return sqr_magnitude;
 	}
@@ -177,7 +177,7 @@ public class Vector3
 	 * @param s The scalar to multiply by
 	 * @return This, for ease of use
 	 */
-	public Vector3 scale(float s)
+	public Vector3 scale(double s)
 	{
 		x *= s;
 		y *= s;
@@ -192,7 +192,7 @@ public class Vector3
 	 * @param s The scalar to multiply by
 	 * @return The new vector
 	 */
-	public Vector3 n_scale(float s)
+	public Vector3 n_scale(double s)
 	{
 		return new Vector3(x*s, y*s, z*s);
 	}
@@ -223,7 +223,7 @@ public class Vector3
 	 * @param b The other vector
 	 * @return The dot product
 	 */
-	public float dot(Vector3 b)
+	public double dot(Vector3 b)
 	{
 		return x * b.x + y * b.y + z * b.z;
 	}
@@ -235,9 +235,9 @@ public class Vector3
 	 */
 	public Vector3 cross(Vector3 b)
 	{
-		float nx = y * b.z - z * b.y;
-		float ny = z * b.x - x * b.z;
-		float nz = x * b.y - y * b.x;
+		double nx = y * b.z - z * b.y;
+		double ny = z * b.x - x * b.z;
+		double nz = x * b.y - y * b.x;
 		
 		x = nx;
 		y = ny;
@@ -258,11 +258,116 @@ public class Vector3
 	}
 
 	/**
+	 * Normalizes this vector (makes it magnitude 1)
+	 * @return This, for ease of use
+	 */
+	public Vector3 normalize()
+	{
+		this.x /= this.magnitude;
+		this.y /= this.magnitude;
+		this.z /= this.magnitude;
+		this.magnitude = 1;
+		this.sqr_magnitude = 1;
+		return this;
+	}
+
+	/**
+	 * Creates a new vector that is the normalized version of this
+	 * @return The new vector
+	 */
+	public Vector3 n_normalize()
+	{
+		return new Vector3(this.x / this.magnitude, this.y / this.magnitude, this.z / this.magnitude);
+	}
+
+	/**
+	 * Projects this vector on vector <u>
+	 * @param u The vector to project onto
+	 * @return This, for ease of use
+	 */
+	public Vector3 project(Vector3 u)
+	{
+		return scale(u.dot(this) / u.sqr_magnitude);
+	}
+
+	/**
+	 * Creates a new vector that is this projected on u
+	 * @param u The vector to project onto
+	 * @return The new vector
+	 */
+	public Vector3 n_project(Vector3 u)
+	{
+		double s = u.dot(this) / u.sqr_magnitude;
+		return new Vector3(u.X() * s, u.Y() * s, u.Z() * s);
+	}
+
+	/**
+	 * Projects this onto the plane defined by <normal>
+	 * @param normal The normal of the plane to project onto
+	 * @return This, for ease of use
+	 */
+	public Vector3 projectOnPlane(Vector3 normal)
+	{
+		double s = normal.dot(this) / normal.sqr_magnitude;
+		this.x -= normal.X() * s;
+		this.y -= normal.Y() * s;
+		this.z -= normal.Z() * s;
+		Recalculate();
+		return this;
+	}
+
+	/**
+	 * Creates a new vector that is this projected onto the plane defined by <normal>
+	 * @param normal The normal of the plane to project onto
+	 * @return The new vector
+	 */
+	public Vector3 n_projectOnPlane(Vector3 normal)
+	{
+		double s = normal.dot(this) / normal.sqr_magnitude;
+		return new Vector3(this.x - normal.X() * s, this.y - normal.Y() * s, this.z - normal.Z() * s);
+	}
+
+	/**
+	 * Creates a new vector that linearly interpolates between a and b by alpha
+	 * @param a The vector at 0
+	 * @param b The vector at 1
+	 * @param alpha The interpolation value
+	 * @return The new vector
+	 */
+	public static Vector3 lerp(Vector3 a, Vector3 b, float alpha)
+	{
+		double dx = b.X() - a.X();
+		double dy = b.Y() - a.Y();
+		double dz = b.Z() - a.Z();
+
+		return new Vector3(a.X() + dx * alpha, a.Y() + dy * alpha, a.Z() + dz * alpha);
+	}
+
+	/**
+	 * Creates a new vector that is the same as this vector
+	 * @return The new vector
+	 */
+	public Vector3 clone()
+	{
+		return new Vector3(x, y, z);
+	}
+
+	/**
 	 * Recalculates stored values of the vector
 	 */
 	private void Recalculate()
 	{
 		this.sqr_magnitude = x*x + y*y + z*z;
 		this.magnitude = (float)Math.sqrt(sqr_magnitude);
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Vector3{" +
+				"x=" + x +
+				", y=" + y +
+				", z=" + z +
+				'}';
 	}
 }

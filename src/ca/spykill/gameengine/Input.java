@@ -231,7 +231,6 @@ public class Input implements KeyListener, MouseWheelListener, MouseInputListene
 		{
 			keys[e.getKeyCode()] = true;
 			keysDown[e.getKeyCode()] = true;
-			System.out.println("Here " + e.getKeyCode());
 		}
 	}
 
