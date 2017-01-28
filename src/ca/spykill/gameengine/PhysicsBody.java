@@ -85,7 +85,7 @@ public class PhysicsBody extends GameObject
 
     public void doVelocityStep(float deltaTime)
     {
-        this.localPosition.add(velocity.n_scale(deltaTime));
+        this.localPosition.m_add(velocity.scale(deltaTime));
     }
 
     private void handleCollision(PhysicsBody body)
@@ -107,9 +107,9 @@ public class PhysicsBody extends GameObject
                 if (cd != null)
                 {
                     float massTotal = mass + body.mass;
-                    localPosition.add(cd.normal.n_scale(cd.penetration * myMass / massTotal));
-                    body.localPosition.add(cd.normal.n_scale(-cd.penetration * theirMass / massTotal));
-                    Vector3 relVel = body.velocity.n_sub(velocity);
+                    localPosition.m_add(cd.normal.scale(cd.penetration * myMass / massTotal));
+                    body.localPosition.m_add(cd.normal.scale(-cd.penetration * theirMass / massTotal));
+                    Vector3 relVel = body.velocity.sub(velocity);
                     float velAlongNormal = (float)relVel.dot(cd.normal);
 
                     if(velAlongNormal < 0)
@@ -123,9 +123,9 @@ public class PhysicsBody extends GameObject
                     {
                         j /= myMass * theirMass;
                     }
-                    Vector3 impulse = cd.normal.n_scale(j);
-                    velocity.add(impulse.n_scale(myMass));
-                    body.velocity.add(impulse.n_scale(-theirMass));
+                    Vector3 impulse = cd.normal.scale(j);
+                    velocity.m_add(impulse.scale(myMass));
+                    body.velocity.m_add(impulse.scale(-theirMass));
                 }
             }
         }
@@ -173,21 +173,21 @@ public class PhysicsBody extends GameObject
 
     public void accelerate(Vector3 acceleration)
     {
-        this.velocity.add(acceleration);
+        this.velocity.m_add(acceleration);
     }
 
     public void accelerate(Vector3 acceleration, float deltaTime)
     {
-        this.velocity.add(acceleration.n_scale(deltaTime));
+        this.velocity.m_add(acceleration.scale(deltaTime));
     }
 
     public void applyForce(Vector3 force)
     {
-        this.velocity.add(force.n_scale(inv_mass));
+        this.velocity.m_add(force.scale(inv_mass));
     }
 
     public void applyForce(Vector3 force, float deltaTime)
     {
-        this.velocity.add(force.n_scale(inv_mass * deltaTime));
+        this.velocity.m_add(force.scale(inv_mass * deltaTime));
     }
 }

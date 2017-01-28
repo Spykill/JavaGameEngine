@@ -18,11 +18,13 @@ public abstract class Collider
 	public class CollisionData
 	{
 		public Vector3 normal;
+		public Vector3 point;
 		public double penetration;
 
-		public CollisionData(Vector3 normal, double penetration)
+		public CollisionData(Vector3 normal, Vector3 point, double penetration)
 		{
 			this.normal = normal;
+			this.point = point;
 			this.penetration = penetration;
 		}
 	}

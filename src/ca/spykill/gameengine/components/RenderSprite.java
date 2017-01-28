@@ -49,21 +49,22 @@ public class RenderSprite extends Component
     {
         Vector3 pos = Vector3.lerp(lastUpdatePos, nowPos, interpolation);
 
-        Vector3 tl = pos.n_sub(pivot);
-        Vector3 br = tl.n_add(scale);
+        Vector3 tl = pos.sub(pivot);
+        Vector3 br = tl.add(scale);
 
         Vector3 camOffset = cam.getOffset(interpolation);
         float camScale = cam.getScale(interpolation);
         Rectangle camViewport = cam.getViewport(interpolation);
 
-        tl.sub(camOffset);
-        br.sub(camOffset);
-        tl.scale(camScale);
-        br.scale(camScale);
+        tl.m_sub(camOffset);
+        br.m_sub(camOffset);
 
-        tl.add(new Vector3(camViewport.getW() * .5f, camViewport.getH() * .5f));
-        br.add(new Vector3(camViewport.getW() * .5f, camViewport.getH() * .5f));
+        tl.m_add(new Vector3(camViewport.getW() * .5f, camViewport.getH() * .5f));
+        br.m_add(new Vector3(camViewport.getW() * .5f, camViewport.getH() * .5f));
+        tl.m_scale(Camera.GAME_UNIT);
+        br.m_scale(Camera.GAME_UNIT);
 
-        g.drawImage(sprite, (int)(tl.X() * Camera.GAME_UNIT), (int)(tl.Y() * Camera.GAME_UNIT), (int)(br.X() * Camera.GAME_UNIT), (int)(br.Y() * Camera.GAME_UNIT), 0, 0, sprite.getWidth(null), sprite.getHeight(null), tint, null);
+        //g.drawImage(sprite, (int)(tl.X() * Camera.GAME_UNIT), (int)(tl.Y() * Camera.GAME_UNIT), (int)(br.X() * Camera.GAME_UNIT), (int)(br.Y() * Camera.GAME_UNIT), 0, 0, sprite.getWidth(null), sprite.getHeight(null), tint, null);
+        g.drawImage(sprite, (int)tl.X(), (int)tl.Y(), (int)br.X(), (int)br.Y(), 0,0, sprite.getWidth(null), sprite.getHeight(null), null);
     }
 }

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d666fa4-f681-4c88-89d6-c48263c6f86f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ca/spykill/gameengine/Game.java" afterPath="$PROJECT_DIR$/src/ca/spykill/gameengine/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ca/spykill/gameengine/GameObject.java" afterPath="$PROJECT_DIR$/src/ca/spykill/gameengine/GameObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ca/spykill/gameengine/Input.java" afterPath="$PROJECT_DIR$/src/ca/spykill/gameengine/Input.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ca/spykill/gameengine/Main.java" afterPath="$PROJECT_DIR$/src/ca/spykill/gameengine/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ca/spykill/gameengine/PhysicsBody.java" afterPath="$PROJECT_DIR$/src/ca/spykill/gameengine/PhysicsBody.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ca/spykill/gameengine/math/Rectangle.java" afterPath="$PROJECT_DIR$/src/ca/spykill/gameengine/math/Rectangle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ca/spykill/gameengine/cameras/MovingCamera.java" afterPath="$PROJECT_DIR$/src/ca/spykill/gameengine/cameras/MovingCamera.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ca/spykill/gameengine/components/RenderSprite.java" afterPath="$PROJECT_DIR$/src/ca/spykill/gameengine/components/RenderSprite.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ca/spykill/gameengine/math/Vector3.java" afterPath="$PROJECT_DIR$/src/ca/spykill/gameengine/math/Vector3.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ca/spykill/gameengine/physics/Collider.java" afterPath="$PROJECT_DIR$/src/ca/spykill/gameengine/physics/Collider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ca/spykill/gameengine/physics/ColliderBox.java" afterPath="$PROJECT_DIR$/src/ca/spykill/gameengine/physics/ColliderBox.java" />
@@ -28,57 +27,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="RenderSprite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/components/RenderSprite.java">
+      <file leaf-file-name="TestScene.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/scenes/TestScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="39" column="27" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PhysicsBody.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/PhysicsBody.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="124" column="21" lean-forward="false" selection-start-line="124" selection-start-column="21" selection-end-line="124" selection-end-column="21" />
-              <folding>
-                <element signature="method#PhysicsBody#0;class#PhysicsBody#0" expanded="false" />
-                <element signature="e#1943#1944#0" expanded="true" />
-                <element signature="e#2010#2011#0" expanded="true" />
-                <element signature="e#4273#4274#0" expanded="true" />
-                <element signature="e#4304#4305#0" expanded="true" />
-                <element signature="e#4357#4358#0" expanded="true" />
-                <element signature="e#4397#4398#0" expanded="true" />
-                <element signature="e#4453#4454#0" expanded="true" />
-                <element signature="e#4500#4501#0" expanded="true" />
-                <element signature="e#4688#4689#0" expanded="true" />
-                <element signature="e#4746#4747#0" expanded="true" />
-                <element signature="e#4812#4813#0" expanded="true" />
-                <element signature="e#4882#4883#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/GameObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="66" column="32" lean-forward="false" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+            <state relative-caret-position="539">
+              <caret line="73" column="8" lean-forward="false" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Camera.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/Camera.java">
+      <file leaf-file-name="ColliderConvexPoly.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/physics/ColliderConvexPoly.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="83" lean-forward="true" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
+            <state relative-caret-position="865">
+              <caret line="56" column="9" lean-forward="false" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,11 +49,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestScene.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/scenes/TestScene.java">
+      <file leaf-file-name="Vector3.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/math/Vector3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="21" column="47" lean-forward="false" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+            <state relative-caret-position="255">
+              <caret line="242" column="50" lean-forward="true" selection-start-line="242" selection-start-column="50" selection-end-line="244" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Collider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/physics/Collider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -99,11 +72,9 @@
       <file leaf-file-name="MovingCamera.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/cameras/MovingCamera.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="79" column="29" lean-forward="true" selection-start-line="79" selection-start-column="29" selection-end-line="80" selection-end-column="239" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="610">
+              <caret line="75" column="9" lean-forward="false" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,18 +82,11 @@
       <file leaf-file-name="FollowingCamera.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/cameras/FollowingCamera.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
+            <state relative-caret-position="153">
               <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#333#334#0" expanded="true" />
                 <element signature="e#360#361#0" expanded="true" />
-                <element signature="e#428#429#0" expanded="true" />
-                <element signature="e#452#453#0" expanded="true" />
-                <element signature="e#523#524#0" expanded="true" />
-                <element signature="e#550#551#0" expanded="true" />
-                <element signature="e#625#626#0" expanded="true" />
-                <element signature="e#652#653#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,10 +95,9 @@
       <file leaf-file-name="Gravity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/components/Gravity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="17" column="61" lean-forward="true" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+            <state relative-caret-position="238">
+              <caret line="17" column="61" lean-forward="false" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#400#401#0" expanded="true" />
                 <element signature="e#468#469#0" expanded="true" />
               </folding>
@@ -145,7 +108,7 @@
       <file leaf-file-name="PhysicsComponent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/PhysicsComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="255">
               <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
               <folding />
             </state>
@@ -155,13 +118,26 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1540">
+            <state relative-caret-position="828">
               <caret line="121" column="21" lean-forward="false" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#startScene#0;class#Game#0" expanded="false" />
                 <element signature="method#addToScene#0;class#Game#0" expanded="false" />
                 <element signature="method#addPhysicsBodyToLists#0;class#Game#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhysicsBody.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/PhysicsBody.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-233">
+              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+              <folding>
+                <element signature="method#PhysicsBody#0;class#PhysicsBody#0" expanded="false" />
+                <element signature="e#1943#1944#0" expanded="true" />
+                <element signature="e#2010#2011#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -180,7 +156,13 @@
     <findStrings>
       <find>tryPhysics</find>
       <find>System</find>
+      <find>n_scale</find>
+      <find>scale</find>
+      <find>add</find>
     </findStrings>
+    <replaceStrings>
+      <replace>scale</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -198,31 +180,34 @@
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/Renderable.java" />
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/Updateable.java" />
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/Input.java" />
-        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/math/Vector3.java" />
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/math/Rectangle.java" />
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/MovingCamera.java" />
-        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/physics/Collider.java" />
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/Game.java" />
-        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/physics/ColliderBox.java" />
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/Main.java" />
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/Component.java" />
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/PhysicsComponent.java" />
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/components/Gravity.java" />
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/GameObject.java" />
-        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/components/RenderSprite.java" />
-        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/PhysicsBody.java" />
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/cameras/FollowingCamera.java" />
-        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/scenes/TestScene.java" />
-        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/cameras/MovingCamera.java" />
         <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/Camera.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/physics/ColliderConvexHull.java" />
+        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/components/RenderSprite.java" />
+        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/cameras/MovingCamera.java" />
+        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/PhysicsBody.java" />
+        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/physics/Collider.java" />
+        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/physics/ColliderBox.java" />
+        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/math/Vector3.java" />
+        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/physics/ColliderConvexPoly.java" />
+        <option value="$PROJECT_DIR$/src/ca/spykill/gameengine/scenes/TestScene.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-1688" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -269,6 +254,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="gameengine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaGameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaGameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gameengine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utility" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -384,13 +391,14 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Application.Unnamed">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -630,26 +638,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1688" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286026" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33150384" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33078602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10364583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11845238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -661,7 +669,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -680,15 +688,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286026" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33078602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.146875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11845238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -698,7 +707,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -706,28 +717,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/math/Vector3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6556">
-          <caret line="340" column="14" lean-forward="false" selection-start-line="340" selection-start-column="14" selection-end-line="340" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3916">
           <caret line="182" column="10" lean-forward="false" selection-start-line="182" selection-start-column="10" selection-end-line="182" selection-end-column="10" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#startScene#0;class#Game#0" expanded="false" />
             <element signature="method#addToScene#0;class#Game#0" expanded="false" />
             <element signature="method#addPhysicsBodyToLists#0;class#Game#0" expanded="false" />
@@ -739,9 +733,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -749,7 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5104">
           <caret line="232" column="44" lean-forward="false" selection-start-line="232" selection-start-column="44" selection-end-line="232" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,7 +757,9 @@
         <state relative-caret-position="374">
           <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#648#649#0" expanded="false" />
+            <element signature="e#680#681#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -775,9 +768,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1430">
           <caret line="72" column="10" lean-forward="false" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -802,7 +793,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#startScene#0;class#Game#0" expanded="false" />
             <element signature="method#addToScene#0;class#Game#0" expanded="false" />
             <element signature="method#addPhysicsBodyToLists#0;class#Game#0" expanded="false" />
@@ -814,9 +804,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -824,7 +812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4356">
           <caret line="232" column="44" lean-forward="false" selection-start-line="232" selection-start-column="44" selection-end-line="232" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,7 +828,9 @@
         <state relative-caret-position="374">
           <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#648#649#0" expanded="false" />
+            <element signature="e#680#681#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -850,9 +839,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1430">
           <caret line="72" column="10" lean-forward="false" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -877,7 +864,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#startScene#0;class#Game#0" expanded="false" />
             <element signature="method#addToScene#0;class#Game#0" expanded="false" />
             <element signature="method#addPhysicsBodyToLists#0;class#Game#0" expanded="false" />
@@ -889,9 +875,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -899,7 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4356">
           <caret line="232" column="44" lean-forward="false" selection-start-line="232" selection-start-column="44" selection-end-line="232" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,7 +899,9 @@
         <state relative-caret-position="374">
           <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#648#649#0" expanded="false" />
+            <element signature="e#680#681#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -925,9 +910,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1430">
           <caret line="72" column="10" lean-forward="false" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -952,7 +935,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#startScene#0;class#Game#0" expanded="false" />
             <element signature="method#addToScene#0;class#Game#0" expanded="false" />
             <element signature="method#addPhysicsBodyToLists#0;class#Game#0" expanded="false" />
@@ -966,18 +948,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#PhysicsBody#0;class#PhysicsBody#0" expanded="false" />
-            <element signature="e#1943#1944#0" expanded="true" />
-            <element signature="e#2010#2011#0" expanded="true" />
-            <element signature="e#4273#4274#0" expanded="true" />
-            <element signature="e#4304#4305#0" expanded="true" />
-            <element signature="e#4357#4358#0" expanded="true" />
-            <element signature="e#4397#4398#0" expanded="true" />
-            <element signature="e#4453#4454#0" expanded="true" />
-            <element signature="e#4500#4501#0" expanded="true" />
-            <element signature="e#4688#4689#0" expanded="true" />
-            <element signature="e#4746#4747#0" expanded="true" />
-            <element signature="e#4812#4813#0" expanded="true" />
-            <element signature="e#4882#4883#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1003,7 +973,6 @@
         <state relative-caret-position="2288">
           <caret line="107" column="5" lean-forward="true" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#startScene#0;class#Game#0" expanded="false" />
             <element signature="method#addToScene#0;class#Game#0" expanded="false" />
             <element signature="method#addPhysicsBodyToLists#0;class#Game#0" expanded="false" />
@@ -1032,15 +1001,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
           <caret line="232" column="44" lean-forward="false" selection-start-line="232" selection-start-column="44" selection-end-line="232" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/math/Vector3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,25 +1009,9 @@
         <state relative-caret-position="301">
           <caret line="121" column="50" lean-forward="false" selection-start-line="121" selection-start-column="50" selection-end-line="121" selection-end-column="50" />
           <folding>
-            <element signature="e#1581#1582#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="false" />
+            <element signature="e#1633#1634#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/physics/Collider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/physics/ColliderBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,27 +1028,46 @@
         <state relative-caret-position="264">
           <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding>
-            <element signature="e#226#227#0" expanded="true" />
-            <element signature="e#276#277#0" expanded="true" />
-            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="false" />
+            <element signature="e#276#277#0" expanded="false" />
+            <element signature="e#310#311#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#648#649#0" expanded="false" />
+            <element signature="e#680#681#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
+        <state relative-caret-position="828">
           <caret line="66" column="32" lean-forward="false" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/components/Gravity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="17" column="61" lean-forward="true" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+        <state relative-caret-position="238">
+          <caret line="17" column="61" lean-forward="false" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#400#401#0" expanded="true" />
             <element signature="e#468#469#0" expanded="true" />
           </folding>
@@ -1113,40 +1076,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/PhysicsComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="255">
           <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/PhysicsBody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="124" column="21" lean-forward="false" selection-start-line="124" selection-start-column="21" selection-end-line="124" selection-end-column="21" />
-          <folding>
-            <element signature="method#PhysicsBody#0;class#PhysicsBody#0" expanded="false" />
-            <element signature="e#1943#1944#0" expanded="true" />
-            <element signature="e#2010#2011#0" expanded="true" />
-            <element signature="e#4273#4274#0" expanded="true" />
-            <element signature="e#4304#4305#0" expanded="true" />
-            <element signature="e#4357#4358#0" expanded="true" />
-            <element signature="e#4397#4398#0" expanded="true" />
-            <element signature="e#4453#4454#0" expanded="true" />
-            <element signature="e#4500#4501#0" expanded="true" />
-            <element signature="e#4688#4689#0" expanded="true" />
-            <element signature="e#4746#4747#0" expanded="true" />
-            <element signature="e#4812#4813#0" expanded="true" />
-            <element signature="e#4882#4883#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
+        <state relative-caret-position="828">
           <caret line="121" column="21" lean-forward="false" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#startScene#0;class#Game#0" expanded="false" />
             <element signature="method#addToScene#0;class#Game#0" expanded="false" />
             <element signature="method#addPhysicsBodyToLists#0;class#Game#0" expanded="false" />
@@ -1154,61 +1094,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/cameras/FollowingCamera.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/components/RenderSprite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#333#334#0" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#452#453#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#652#653#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/scenes/TestScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="21" column="47" lean-forward="false" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        <state relative-caret-position="255">
+          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/components/RenderSprite.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/physics/ColliderBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="39" column="27" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+        <state relative-caret-position="323">
+          <caret line="62" column="78" lean-forward="false" selection-start-line="62" selection-start-column="78" selection-end-line="62" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/PhysicsBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-233">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <element signature="method#PhysicsBody#0;class#PhysicsBody#0" expanded="false" />
+            <element signature="e#1943#1944#0" expanded="true" />
+            <element signature="e#2010#2011#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/math/Vector3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="242" column="50" lean-forward="true" selection-start-line="242" selection-start-column="50" selection-end-line="244" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/physics/ColliderConvexPoly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="865">
+          <caret line="56" column="9" lean-forward="false" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/cameras/FollowingCamera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding>
+            <element signature="e#333#334#0" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/cameras/MovingCamera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="79" column="29" lean-forward="true" selection-start-line="79" selection-start-column="29" selection-end-line="80" selection-end-column="239" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="610">
+          <caret line="75" column="9" lean-forward="false" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/Camera.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/physics/Collider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="83" lean-forward="true" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="406">
+          <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ca/spykill/gameengine/scenes/TestScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="73" column="8" lean-forward="false" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

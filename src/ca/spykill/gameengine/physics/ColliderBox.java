@@ -24,7 +24,7 @@ public class ColliderBox extends Collider
 
 			Vector3 ourCentre = ourRect.getCentre();
 			Vector3 theirCenter = theirRect.getCentre();
-			Vector3 toThemV = theirCenter.n_sub(ourCentre);
+			Vector3 toThemV = theirCenter.sub(ourCentre);
 			double extentX = (ourRect.getW() + theirRect.getW()) * 0.5f;
 			double extentY = (ourRect.getH() + theirRect.getH()) * 0.5f;
 
@@ -45,22 +45,22 @@ public class ColliderBox extends Collider
 			{
 				if(toThemV.X() < 0)
 				{
-					return new CollisionData(new Vector3(1, 0), xPen);
+					return new CollisionData(new Vector3(1, 0), new Vector3(), xPen);
 				}
 				else
 				{
-					return new CollisionData(new Vector3(-1, 0), xPen);
+					return new CollisionData(new Vector3(-1, 0), new Vector3(), xPen);
 				}
 			}
 			else
 			{
 				if(toThemV.Y() < 0)
 				{
-					return new CollisionData(new Vector3(0, 1), yPen);
+					return new CollisionData(new Vector3(0, 1), new Vector3(), yPen);
 				}
 				else
 				{
-					return new CollisionData(new Vector3(0, -1), yPen);
+					return new CollisionData(new Vector3(0, -1), new Vector3(), yPen);
 				}
 			}
 		}

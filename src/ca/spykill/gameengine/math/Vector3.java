@@ -128,7 +128,7 @@ public class Vector3
 	 * @param b The other vector to add
 	 * @return This, for ease of use
 	 */
-	public Vector3 add(Vector3 b)
+	public Vector3 m_add(Vector3 b)
 	{
 		x += b.x;
 		y += b.y;
@@ -142,7 +142,7 @@ public class Vector3
 	 * @param b The other vector to add
 	 * @return The new Vector
 	 */
-	public Vector3 n_add(Vector3 b)
+	public Vector3 add(Vector3 b)
 	{
 		return new Vector3(x + b.x, y + b.y, z + b.z);
 	}
@@ -153,7 +153,7 @@ public class Vector3
 	 * @param b The other vector to subtract
 	 * @return This, for ease of use
 	 */
-	public Vector3 sub(Vector3 b)
+	public Vector3 m_sub(Vector3 b)
 	{
 		x -= b.x;
 		y -= b.y;
@@ -167,7 +167,7 @@ public class Vector3
 	 * @param b The other vector to subtract
 	 * @return The new Vector
 	 */
-	public Vector3 n_sub(Vector3 b)
+	public Vector3 sub(Vector3 b)
 	{
 		return new Vector3(x - b.x, y - b.y, z - b.z);
 	}
@@ -177,7 +177,7 @@ public class Vector3
 	 * @param s The scalar to multiply by
 	 * @return This, for ease of use
 	 */
-	public Vector3 scale(double s)
+	public Vector3 m_scale(double s)
 	{
 		x *= s;
 		y *= s;
@@ -192,7 +192,7 @@ public class Vector3
 	 * @param s The scalar to multiply by
 	 * @return The new vector
 	 */
-	public Vector3 n_scale(double s)
+	public Vector3 scale(double s)
 	{
 		return new Vector3(x*s, y*s, z*s);
 	}
@@ -201,7 +201,7 @@ public class Vector3
 	 * Negates this vector, modifying it in the process
 	 * @return This, for ease of use
 	 */
-	public Vector3 neg()
+	public Vector3 m_neg()
 	{
 		x = -x;
 		y = -y;
@@ -213,7 +213,7 @@ public class Vector3
 	 * Creates a new Vector that is the negation of this Vector 
 	 * @return The new vector
 	 */
-	public Vector3 n_neg()
+	public Vector3 neg()
 	{
 		return new Vector3(-x, -y, -z);
 	}
@@ -227,13 +227,31 @@ public class Vector3
 	{
 		return x * b.x + y * b.y + z * b.z;
 	}
+
+	/**
+	 * Computes the angle between this and b
+	 * @param b The other vector
+	 * @return The angle between this and b in radians
+	 */
+	public double angle(Vector3 b)
+	{
+		if(magnitude == 0 || b.magnitude == 0)
+		{
+			return 0;
+		}
+
+		double v = dot(b)/magnitude / b.magnitude;
+		if(v > 1){v = 1;}
+		else if(v < -1){v = -1;}
+		return Math.acos(v);
+	}
 	
 	/**
 	 * Computes the cross product of this and b, modifying this
 	 * @param b The other vector
 	 * @return This, for ease of use
 	 */
-	public Vector3 cross(Vector3 b)
+	public Vector3 m_cross(Vector3 b)
 	{
 		double nx = y * b.z - z * b.y;
 		double ny = z * b.x - x * b.z;
@@ -252,7 +270,7 @@ public class Vector3
 	 * @param b The other vector
 	 * @return The new vector
 	 */
-	public Vector3 n_cross(Vector3 b)
+	public Vector3 cross(Vector3 b)
 	{
 		return new Vector3(y * b.z - z * b.y, z * b.x - x * b.z, x * b.y - y * b.x);
 	}
@@ -261,7 +279,7 @@ public class Vector3
 	 * Normalizes this vector (makes it magnitude 1)
 	 * @return This, for ease of use
 	 */
-	public Vector3 normalize()
+	public Vector3 m_normalize()
 	{
 		this.x /= this.magnitude;
 		this.y /= this.magnitude;
@@ -275,7 +293,7 @@ public class Vector3
 	 * Creates a new vector that is the normalized version of this
 	 * @return The new vector
 	 */
-	public Vector3 n_normalize()
+	public Vector3 normalize()
 	{
 		return new Vector3(this.x / this.magnitude, this.y / this.magnitude, this.z / this.magnitude);
 	}
@@ -285,7 +303,7 @@ public class Vector3
 	 * @param u The vector to project onto
 	 * @return This, for ease of use
 	 */
-	public Vector3 project(Vector3 u)
+	public Vector3 m_project(Vector3 u)
 	{
 		return scale(u.dot(this) / u.sqr_magnitude);
 	}
@@ -295,7 +313,7 @@ public class Vector3
 	 * @param u The vector to project onto
 	 * @return The new vector
 	 */
-	public Vector3 n_project(Vector3 u)
+	public Vector3 project(Vector3 u)
 	{
 		double s = u.dot(this) / u.sqr_magnitude;
 		return new Vector3(u.X() * s, u.Y() * s, u.Z() * s);
@@ -306,7 +324,7 @@ public class Vector3
 	 * @param normal The normal of the plane to project onto
 	 * @return This, for ease of use
 	 */
-	public Vector3 projectOnPlane(Vector3 normal)
+	public Vector3 m_projectOnPlane(Vector3 normal)
 	{
 		double s = normal.dot(this) / normal.sqr_magnitude;
 		this.x -= normal.X() * s;
@@ -321,7 +339,7 @@ public class Vector3
 	 * @param normal The normal of the plane to project onto
 	 * @return The new vector
 	 */
-	public Vector3 n_projectOnPlane(Vector3 normal)
+	public Vector3 projectOnPlane(Vector3 normal)
 	{
 		double s = normal.dot(this) / normal.sqr_magnitude;
 		return new Vector3(this.x - normal.X() * s, this.y - normal.Y() * s, this.z - normal.Z() * s);

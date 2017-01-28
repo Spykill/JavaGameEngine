@@ -47,7 +47,7 @@ public class MovingCamera extends Camera
     @Override
     public Rectangle getViewport(float interpolation)
     {
-        return viewport.clone().translate(Vector3.lerp(new Vector3(), offset.n_sub(lastOffset), interpolation));
+        return viewport.clone().translate(Vector3.lerp(new Vector3(), offset.sub(lastOffset), interpolation));
     }
 
     @Override
@@ -77,7 +77,7 @@ public class MovingCamera extends Camera
             double d = movement.Y() + moveSpeed * deltaTime;
             movement.Y(d);
         }
-        offset.add(movement);
+        offset.m_add(movement);
         viewport = new Rectangle(offset.X() - screenDimensions.X() / GAME_UNIT * .5f / scale, offset.Y() - screenDimensions.Y() / GAME_UNIT * .5f / scale, screenDimensions.X() / GAME_UNIT / scale, screenDimensions.Y() / GAME_UNIT / scale);
     }
 }
